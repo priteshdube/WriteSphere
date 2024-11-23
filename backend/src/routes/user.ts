@@ -33,7 +33,7 @@ userRouter.post('/signup', async (c) => {
 			}
 		});
 		const jwt = await sign({ id: user.id }, c.env.JWT_SECRET);
-	    return c.text(jwt);
+	    return c.json({token: jwt, user: {id: user.id, name: user.name, email: user.email}});
 	} catch(error) {
 		console.log(error);
 		c.status(403);
@@ -66,5 +66,5 @@ userRouter.post('/signin', async (c) => {
 	}
 
 	const jwt = await sign({ id: user.id }, c.env.JWT_SECRET);
-	return c.text(jwt);
+	return c.json({token:jwt, user:{id: user.id, name:user.name, email:user.email}});
 })

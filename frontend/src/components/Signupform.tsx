@@ -33,10 +33,11 @@ function Signupform() {
         e.preventDefault();
         try {
           const response = await sendFormDataToBackend(formData);
-          const {jwt} = response.data;
-          localStorage.setItem('jwt', jwt);
+          const {token, user} = response.data;
+          localStorage.setItem('token', token);
+          localStorage.setItem('user', JSON.stringify(user));
             // Redirect to the blog page
-            navigate('/blogs');
+            navigate('/');
 
          
         } catch (error) {
@@ -49,7 +50,7 @@ function Signupform() {
 
       const sendFormDataToBackend = async (data: SignupFormData) => {
        
-        return await axios.post('http://localhost:8787/api/v1/user/signup', data, {
+        return await axios.post('https://backend.mailforpritesh.workers.dev/api/v1/user/signup', data, {
             headers:{
                 'Content-Type': 'application/json'
             }
