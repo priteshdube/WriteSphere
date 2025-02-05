@@ -1,6 +1,6 @@
-import React from 'react'
+
 import Navbar from '../components/Navbar'
-import { Blog, useBlog } from '../hooks'
+import { useBlog } from '../hooks'
 import { useParams } from 'react-router-dom'
 import Avatar from '../components/Avatar'
 import  Loading  from '../components/Loading'
