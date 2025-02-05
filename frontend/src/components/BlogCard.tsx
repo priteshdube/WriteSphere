@@ -11,7 +11,7 @@ export interface BlogCardProps {
 }
 
 
-const BlogCard = ({ title, content, author, publishedAt, id }: BlogCardProps) => {
+const BlogCard = ({ title, content, author}: BlogCardProps) => {
   return (
     <Link to={`/blog/${title}`}>
       <div className="p-6 border border-slate-200 rounded-lg hover:shadow-lg transition-shadow duration-300 bg-white max-w-2xl mx-auto cursor-pointer">

@@ -13,8 +13,8 @@ interface User {
 const Navbar = () => {
     const [user, setUser] = useState<User | null>();
     const [search, setSearch] = useState<string>('');
-    const {blogs, loading} = useBlogs();
-    const {filteredblogs, setFilteredBlogs} = useBlogContext();
+    const {blogs} = useBlogs();
+    const {setFilteredBlogs} = useBlogContext();
     const navigate = useNavigate();
 
     useEffect(() => {

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+
 import BlogCard from "../components/BlogCard";
 import Navbar from "../components/Navbar";
 import { useBlogs } from "../hooks";
 import Loading from "../components/Loading";
-import { useBlogContext } from "../context";
+
 
 const Blogs = () => {
   const { blogs, loading } = useBlogs();
-  const { filteredblogs } = useBlogContext();
+
 
   return (
     <div className="bg-gray-50 min-h-screen">
